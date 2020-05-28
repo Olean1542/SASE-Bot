@@ -1,7 +1,8 @@
-import discord, asyncio
+import discord
+import asyncio
 import random
+import os
 
-token = "BOT_TOKEN"
 client = discord.Client()
 
 
@@ -69,4 +70,5 @@ async def on_message(message):
         await message.channel.send("", embed=embed)
 
 
-client.run(token)
+bot_token = environ["BOT_TOKEN"]
+client.run(bot_token)
