@@ -30,10 +30,11 @@ async def on_message(message):
         await message.channel.send("뱅행")
 
     if message.content == "사세야 명령어":
-        embed = discord.Embed(title="▧ 사세 명령어 ▨", description="「 니들 채팅에 사세가 친절히 대답해줍니다 」", color=0x62c1cc)
+        embed = discord.Embed(title="▧ 사세 명령어 ▨", description="「 니들 채팅에 사세가 친절히 대답해줍니다 」", color=0xffe400)
         embed.set_thumbnail(url="https://i.imgur.com/feD446z.png")
         embed.add_field(name="Ⅰ.사세와 대화하기", value="● ``뱅행`` ``왜 시비지``", inline=False)
         embed.add_field(name="Ⅱ.사세와 놀기", value="● ``가위바위보`` ``가위`` ``바위`` ``보`` ``주사위``", inline=False)
+        embed.add_field(name="Ⅲ.사세의 갤러리", value="● ``사세 버팔로윙``", inline=False)
         embed.set_footer(text="º 명령어 앞에 '사세야'는 무조건 들어가야함")
         await message.channel.send("", embed=embed)
 
@@ -66,10 +67,10 @@ async def on_message(message):
                 await message.channel.send("이걸 비기네")
 
     if message.content.startswith("사세야 가위바위보"):
-        embed = discord.Embed(title="▧ 사세와 가위바위보 하기 ▨", description="그냥 ``가위`` ``바위`` ``보``중에 하나를 내면 됨", color=0x62c1cc)
+        embed = discord.Embed(title="▧ 사세와 가위바위보 하기 ▨", description="그냥 ``가위`` ``바위`` ``보``중에 하나를 내면 됨", color=0xffe400)
         embed.set_footer(text="º 명령어 앞에 '사세야'는 무조건 들어가야함")
         await message.channel.send("", embed=embed)
-        
+
     if message.content == "사세야 주사위":
         bot_response = random.randint(1, 6)
         if bot_response == 1:
@@ -84,6 +85,12 @@ async def on_message(message):
             await message.channel.send("```● 주사위 눈금 5!```")
         elif bot_response == 6:
             await message.channel.send("```● 주사위 눈금 6!```")
+            
+    if message.content == "사세야 사세 버팔로윙":
+        embed = discord.Embed(title="", description="", color=0xffe400)
+        embed.set_image(url="https://i.imgur.com/iXDlyRn.jpg")
+        embed.set_footer(text="")
+        await message.channel.send("", embed=embed)
 
 
 access_token = os.environ["BOT_TOKEN"]
