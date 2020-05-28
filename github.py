@@ -70,5 +70,5 @@ async def on_message(message):
         await message.channel.send("", embed=embed)
 
 
-bot_token = environ["BOT_TOKEN"]
-client.run(bot_token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
