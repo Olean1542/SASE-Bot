@@ -92,7 +92,7 @@ async def on_message(message):
         embed.set_footer(text="")
         await message.channel.send("", embed=embed)
         
-        if message.content.startswith("사세야 사다리타기 "):
+    if message.content.startswith("사세야 사다리타기 "):
         team = message.content[10:]
         peopleteam = team.split("/")
         people = peopleteam[0]
