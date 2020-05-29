@@ -104,7 +104,7 @@ async def on_message(message):
             await message.channel.send(peoplename[i] + "--->" + teamname[i])
 
     if message.content == "사세야 사다리타기":
-        embed = discord.Embed(title="▧ 사세 사다리게임 ▨", description="● 예시 : 사세야 사다리타기 a,b,c/1,2,3",color=0x62c1cc)
+        embed = discord.Embed(title="▧ 사세 사다리게임 ▨", description="● 예시 : 사세야 사다리타기 a,b,c/1,2,3",color=0xffe400)
         embed.set_footer(text="º 명령어 앞에 '사세야'는 무조건 들어가야함")
         await message.channel.send("", embed=embed)
 
