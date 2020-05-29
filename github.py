@@ -33,7 +33,7 @@ async def on_message(message):
         embed = discord.Embed(title="▧ 사세 명령어 ▨", description="「 니들 채팅에 사세가 친절히 대답해줍니다 」", color=0xffe400)
         embed.set_thumbnail(url="https://i.imgur.com/feD446z.png")
         embed.add_field(name="Ⅰ.사세와 대화하기", value="● ``뱅행`` ``왜 시비지``", inline=False)
-        embed.add_field(name="Ⅱ.사세와 놀기", value="● ``가위바위보`` ``가위`` ``바위`` ``보`` ``주사위``", inline=False)
+        embed.add_field(name="Ⅱ.사세와 놀기", value="● ``가위바위보`` ``가위`` ``바위`` ``보`` ``주사위`` ``사다리타기``", inline=False)
         embed.add_field(name="Ⅲ.사세의 갤러리", value="● ``사세 버팔로윙``", inline=False)
         embed.set_footer(text="º 명령어 앞에 '사세야'는 무조건 들어가야함")
         await message.channel.send("", embed=embed)
@@ -90,6 +90,22 @@ async def on_message(message):
         embed = discord.Embed(title="", description="", color=0xffe400)
         embed.set_image(url="https://i.imgur.com/iXDlyRn.jpg")
         embed.set_footer(text="")
+        await message.channel.send("", embed=embed)
+        
+        if message.content.startswith("사세야 사다리타기 "):
+        team = message.content[10:]
+        peopleteam = team.split("/")
+        people = peopleteam[0]
+        team = peopleteam[1]
+        peoplename = people.split(",")
+        teamname = team.split(",")
+        random.shuffle(teamname)
+        for i in range(0, len(peoplename)):
+            await message.channel.send(peoplename[i] + "--->" + teamname[i])
+
+    if message.content == "사세야 사다리타기":
+        embed = discord.Embed(title="▧ 사세 사다리게임 ▨", description="● 예시 : 사세야 사다리타기 a,b,c/1,2,3",color=0x62c1cc)
+        embed.set_footer(text="º 명령어 앞에 '사세야'는 무조건 들어가야함")
         await message.channel.send("", embed=embed)
 
 
