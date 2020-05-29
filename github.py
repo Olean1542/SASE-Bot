@@ -101,7 +101,7 @@ async def on_message(message):
         teamname = team.split(",")
         random.shuffle(teamname)
         for i in range(0, len(peoplename)):
-            await message.channel.send(peoplename[i] + "--->" + teamname[i])
+            await message.channel.send(peoplename[i] + " ---> " + teamname[i])
 
     if message.content == "사세야 사다리타기":
         embed = discord.Embed(title="▧ 사세 사다리게임 ▨", description="● 예시 : 사세야 사다리타기 a,b,c/1,2,3",color=0xffe400)
