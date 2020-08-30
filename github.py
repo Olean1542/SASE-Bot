@@ -46,13 +46,13 @@ async def on_message(message):
             if message.content == "사세야 가위":
                 await message.channel.send("이걸 비기네")
             elif message.content == "사세야 바위":
-                await message.channel.send("졌노")
+                await message.channel.send("졌네")
             else:
-                await message.channel.send("내가 이겼다~")
+                await message.channel.send("내가 이겼다")
         elif bot_response == 2:
             await message.channel.send("```● 사세가 바위를 냈습니다.```")
             if message.content == "사세야 가위":
-                await message.channel.send("내가 이겼다~")
+                await message.channel.send("내가 이겼다")
             elif message.content == "사세야 바위":
                 await message.channel.send("이걸 비기네")
             else:
@@ -60,9 +60,9 @@ async def on_message(message):
         else:
             await message.channel.send("```● 사세가 보를 냈습니다.```")
             if message.content == "사세야 가위":
-                await message.channel.send("졌노")
+                await message.channel.send("졌네")
             elif message.content == "사세야 바위":
-                await message.channel.send("내가 이겼다~")
+                await message.channel.send("내가 이겼다")
             else:
                 await message.channel.send("이걸 비기네")
 
