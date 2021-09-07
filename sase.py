@@ -3,6 +3,7 @@ import asyncio
 import random
 import os
 
+#ㅇ자러ㅣㅈ러지ㅓㅎ저ㅐㅎ저ㅐㅑㅎㅎㅈ곡ㅇㅅ터
 
 client = discord.Client()
 
