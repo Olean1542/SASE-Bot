@@ -27,7 +27,7 @@ async def on_message(message):
         embed = discord.Embed(title="▧ 사세 명령어 ▨", description="「 니들 채팅에 사세가 친절히 대답해줍니다 」", color=0xffe400)
         embed.set_thumbnail(url="https://i.imgur.com/feD446z.png")
         embed.add_field(name="Ⅰ.사세와 대화하기", value="● (없음)",inline=False)
-        embed.add_field(name="Ⅱ.사세와 놀기", value="● ``가위바위보``` ``가위`` ``바위`` ``보`` ``주사위`` ``사다리타기``", inline=False)
+        embed.add_field(name="Ⅱ.사세와 놀기", value="● ``가위바위보`` ``가위`` ``바위`` ``보`` ``주사위`` ``사다리타기``", inline=False)
         embed.add_field(name="Ⅲ.사세의 갤러리", value="● ``사세 버팔로윙`` ``유미`` ``우주비행사 유미`` ``놀란 유미``", inline=False)
         embed.set_footer(text="º 명령어 앞에 '사세야'는 무조건 들어가야함")
         await message.channel.send("", embed=embed)
