@@ -120,6 +120,26 @@ async def on_message(message):
         embed.set_image(url="https://images2.minutemediacdn.com/image/upload/shape/cover/sport/lol-yuumi-180db8c08b993c6b556ef198376a5bf9")
         embed.set_footer(text="")
         await message.channel.send("", embed=embed)
+        
+    if message.content == "사세야 구스덕":
+        embed = discord.Embed(title="▧ 사세 구스덕 ▨", description="「 구스덕  」", color=0xffe400)
+        embed.add_field(name="Ⅰ.구스덕 방 생성", value="● ``구스덕 생성 (방 코드)``",inline=False)
+        embed.add_field(name="Ⅱ.구스덕 명령어", value="● ``구스덕 참가`` ``구스덕 탈퇴`` ``구스덕 목록``", inline=False)
+        embed.add_field(name="Ⅲ.구스덕 방 파괴", value="● ``구스덕 파괴``", inline=False)
+        embed.set_footer(text="º 명령어 앞에 '사세야'는 무조건 들어가야함")
+    
+    if message.content == "사세야 구스덕 생성 ":
+        code = message.content[11:]
+        await message.delete()
+        embed = discord.Embed(title="▧ 방 생성됨 ▨", description=" - 방 코드 " + code + " - ", color=0xffe400)
+        
+    if message.content == "사세야 구스덕 참가":
+       
+    if message.content == "사세야 구스덕 탈퇴":
+    
+    if message.content == "사세야 구스덕 목록":
+        
+    if message.content == "사세야 구스덕 파괴":
 
 
 access_token = os.environ["BOT_TOKEN"]
