@@ -142,5 +142,5 @@ async def on_message(message):
     if message.content == "사세야 구스덕 파괴":
 
 
-access_token = os.environ["BOT_TOKEN"]
+access_token = os.environ['BOT_TOKEN']
 client.run(access_token)
