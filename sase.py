@@ -7,7 +7,6 @@ import os
 
 client = discord.Client()
 
-
 @client.event
 async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game("사세를 따뜻하게"))
@@ -18,6 +17,8 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+
+
     if message.author.bot:
         return None
 
@@ -124,23 +125,43 @@ async def on_message(message):
     if message.content == "사세야 구스덕":
         embed = discord.Embed(title="▧ 사세 구스덕 ▨", description="「 구스덕  」", color=0xffe400)
         embed.add_field(name="Ⅰ.구스덕 방 생성", value="● ``구스덕 생성 (방 코드)``",inline=False)
-        embed.add_field(name="Ⅱ.구스덕 명령어", value="● ``구스덕 참가`` ``구스덕 탈퇴`` ``구스덕 목록``", inline=False)
-        embed.add_field(name="Ⅲ.구스덕 방 파괴", value="● ``구스덕 파괴``", inline=False)
+        embed.add_field(name="Ⅱ.구스덕 명령어", value="● ``구스덕 참가`` ``구스덕 퇴장``", inline=False)
+        embed.add_field(name="Ⅲ.구스덕 방 파괴", value="● ``구스덕 초기화``", inline=False)
         embed.set_footer(text="º 명령어 앞에 '사세야'는 무조건 들어가야함")
+        await message.channel.send("", embed=embed)
+        
     
-    if message.content == "사세야 구스덕 생성 ":
+    if message.content.startswith("사세야 구스덕 생성 "):
         code = message.content[11:]
+        channel = 937674397186154526
+        print(message.author.id)
+        role = discord.utils.get(message.guild.roles, name="플레이 중")
+
+        embed = discord.Embed(title="▧ 구스덕 방 생성됨 ▨", description=" - 방 코드 : " + code + " - ", color=0xffe400)
+        embed.set_footer(text="º '사세야 구스덕 참가'로 참가해주세요.")
+
+        msg = await client.get_channel(int(channel)).send("", embed=embed)
+
+        await message.author.add_roles(role)
+
         await message.delete()
-        embed = discord.Embed(title="▧ 방 생성됨 ▨", description=" - 방 코드 " + code + " - ", color=0xffe400)
-        
+
     if message.content == "사세야 구스덕 참가":
-       
-    if message.content == "사세야 구스덕 탈퇴":
-    
-    if message.content == "사세야 구스덕 목록":
+
+
+        role = discord.utils.get(message.guild.roles, name="플레이 중")
+
+
+        await message.author.add_roles(role)
+        await message.delete()
+
+    if message.content == "사세야 구스덕 퇴장":
+
+
+        role = discord.utils.get(message.guild.roles, name="플레이 중")
+
+        await message.author.remove_roles(role)
+        await message.delete()
         
-    if message.content == "사세야 구스덕 파괴":
-
-
 access_token = os.environ['BOT_TOKEN']
 client.run(access_token)
